@@ -18,14 +18,20 @@ export class GroupsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.groupName = '';
   }
   getBubble(id: number): void {
     this.getGroupId.emit(id);
   }
   createGroup() {
-    this.universityService.postGroup({group_name:this.groupName,faculty_id:this.groupsInfo.faculty_id}).subscribe((value)=>{
-      console.log(value);
-      this.createGroupBubble.emit(this.groupsInfo.faculty_id)
-    });
+    if(this.groupName!=''){
+      this.universityService.postGroup({group_name:this.groupName,faculty_id:this.groupsInfo.faculty_id}).subscribe((value)=>{
+        console.log(value);
+        this.createGroupBubble.emit(this.groupsInfo.faculty_id)
+      });
+    }else{
+      alert('write smth')
+    }
+
   }
 }

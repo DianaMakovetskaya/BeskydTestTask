@@ -1,14 +1,13 @@
 <div class="info">
-  <div>
+  <div class="faculties">
     <app-faculties (getFacultyId)="getFacultyId($event)"></app-faculties>
 
   </div>
 
-
-  <div *ngIf="groups">
+  <div *ngIf="groups" class="groups">
     <app-groups [groupsInfo]="{groups:groups,faculty_id:faculty_id}" (getGroupId)="getGroupId($event)" (createGroupBubble)="updateGroups($event)"></app-groups>
   </div>
-  <div *ngIf="showStudents">
+  <div *ngIf="showStudents" class="students">
     <app-students [studentsInfo]="{students:students,group_id:group_id}" (createStudentBubble)="updateStudents($event)"></app-students>
   </div>
 </div>

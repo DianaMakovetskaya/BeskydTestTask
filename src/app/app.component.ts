@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   groups:any[];
   faculty_id:number;
   group_id:number;
-  students:any[];
+  students:any;
   showStudents:boolean;
   constructor(private universityService: UniversityService) {
   }
@@ -27,10 +27,11 @@ export class AppComponent implements OnInit {
     this.universityService.getGroupsByFaculty(id).subscribe(value => this.groups = value);
   }
 
-  getGroupId(id: number) {
+  async getGroupId(id: number) {
     this.showStudents = true;
     this.group_id = id;
-    this.universityService.getStudentsByGroup(id).subscribe(value => this.students = value);
+    this.students = await this.universityService.getStudentsByGroup(id).toPromise();
+    // this.universityService.getStudentsByGroup(id).subscribe(value => this.students = value);
   }
 
   updateGroups(id: number) {

@@ -1,0 +1,25 @@
+.faculty{
+  display: flex;
+  margin-bottom: 10px;
+}
+.title{
+  width: 60%;
+}
+.btn{
+  width: 30%;
+
+}
+button{
+  width: 100%;
+  background-color: red;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12px;
+}
+button:focus{
+  background-color: greenyellow;
+}

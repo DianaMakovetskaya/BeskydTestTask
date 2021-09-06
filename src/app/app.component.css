@@ -1,3 +1,6 @@
 .info{
   display: flex;
 }
+.faculties,.groups,.students{
+  width: 30%;
+}
