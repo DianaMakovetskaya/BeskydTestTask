@@ -1,0 +1,15 @@
+
+
+<h1>Groups:</h1>
+<div *ngIf="groupsInfo.groups.length else oops"></div>
+<app-group  *ngFor="let g of groupsInfo.groups" [group]="g" (bubbleUp)="getBubble($event)"></app-group>
+<ng-template #oops>
+  <div>Ooops... There are no groups:(</div>
+</ng-template>
+
+<h2>Create group
+</h2>
+<form action="" (ngSubmit)="createGroup()">
+  <input type="text" [(ngModel)]="groupName" name="groupName" placeholder="Group name">
+  <button>Create</button>
+</form>

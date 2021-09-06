@@ -1,0 +1,16 @@
+<h1>Students:</h1>
+<div *ngIf="studentsInfo.students.length else oops">
+  <app-student *ngFor="let student of studentsInfo.students" [student]="student"></app-student>
+
+</div>
+<ng-template #oops>
+  <div>Ooops... There are no students:(</div>
+</ng-template>
+
+
+<h2>Create student</h2>
+<form action="" (ngSubmit)="createStudent()">
+  <input type="text" [(ngModel)]="course" name="course" placeholder="course">
+  <input type="text" [(ngModel)]="studentName" name="studentName" placeholder="Student Name">
+  <button>Create</button>
+</form>

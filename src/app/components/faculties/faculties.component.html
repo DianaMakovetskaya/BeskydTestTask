@@ -1,0 +1,10 @@
+<h1>Faculties:</h1>
+<app-faculty  *ngFor="let f of faculties" [faculty]="f" (bubbleUp)="getBubble($event)"></app-faculty>
+
+<h2>Create Faculty</h2>
+<form>
+  <input type="text" [(ngModel)]="faculty_name" name="faculty_name" placeholder="Faculty name">
+  <button (click)="submit()">Create</button>
+</form>
+
+
